@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>aiSortTable</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../src/css/aiSortTable.min.css">
+</head>
+<body>
+<table class="table" id="myTable">
+  <thead>
+    <tr>
+      <th>Первый</th>
+      <th>Второй</th>
+      <th>Третий</th>
+      <th>Последний</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>Ростов</td>
+    <td>Б</td>
+    <td>1.5</td>
+    <td>Socket</td>
+  </tr>
+  <tr>
+    <td>Москва</td>
+    <td>А</td>
+    <td>1.4</td>
+    <td>Polymer</td>
+  </tr>
+  <tr>
+    <td>Анапа</td>
+    <td>Г</td>
+    <td>5</td>
+    <td>Angular.js</td>
+  </tr>
+  <tr>
+    <td>Тула</td>
+    <td>В</td>
+    <td>2</td>
+    <td>Vue.js</td>
+  </tr>
+  <tr>
+    <td>Ленинград</td>
+    <td>Д</td>
+    <td>33</td>
+    <td>React</td>
+  </tr>
+  </tbody>
+</table>
+
+<script src="../src/js/aiSortTable.min.js"></script>  
+
+<script>
+aiSortTable.init("myTable", [0, 3], function(e) {
+  console.log(e);
+});
+</script>
+
+</body>
+</html>
