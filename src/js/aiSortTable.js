@@ -57,10 +57,9 @@ var aiSortTable = (function() {
         for (var x = 0; x < tds.length; x++) {
             tds[x].classList.remove("ai_td_active");
         }
-        if (th != 0) {
-            var sortCol = th.dataset.col;
-        } else {
-            sortCol = 0;
+        var sortCol = 0;
+        if (th !== 0) {
+            sortCol = th.dataset.col;
         }
         var sortCollection = document.querySelectorAll(".ai_td_sorter_" + sortCol);
         var finalArray = [].slice.call(sortCollection);
@@ -97,7 +96,7 @@ var aiSortTable = (function() {
 
     return {
         init: function(table, rule, callback) {
-            var table = document.getElementById(table);
+            table = document.getElementById(table);
             buildTable(table, rule, callback);
         },
     };
