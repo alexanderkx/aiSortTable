@@ -16,7 +16,7 @@ var aiSortTable = (function() {
 	 * @param {function} callback | Функция вызываемая после сортировки
 	 */
 
-    buildTable = function(table, rule, callback) {
+    var buildTable = function(table, rule, callback) {
         var tableHead = table.getElementsByTagName('th');
         var tbody = table.querySelectorAll("tbody")[0];
         for (var i = 0; i < rule.length; i++) {
@@ -32,12 +32,12 @@ var aiSortTable = (function() {
         renderTable(tbody, rule);
     };
 
-    toggleClass = function(th) {
+    var toggleClass = function(th) {
         th.classList.toggle("ai_th_sortable__down");
         th.classList.toggle("ai_th_sortable__up");
     };
 
-    renderTable = function(tbody, rule) {
+    var renderTable = function(tbody, rule) {
         var body = tbody.querySelectorAll("tr");
         for (var i = 0; i < rule.length; i++) {
             for (var j = 0; j < body.length; j++) {
@@ -48,11 +48,11 @@ var aiSortTable = (function() {
         }
     };
 
-    chekValue = function(n) {
+    var chekValue = function(n) {
         return /^-?[\d.]+(?:e-?\d+)?$/.test(n);
     };
 
-    sortProcess = function(th, tbody) {
+    var sortProcess = function(th, tbody) {
         var tds = tbody.querySelectorAll(".ai_td");
         for (var x = 0; x < tds.length; x++) {
             tds[x].classList.remove("ai_td_active");
